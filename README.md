@@ -9,7 +9,7 @@
 
 ## Development
 
-- `install.packages("styler")` + `options(styler.save_after_styling = TRUE)`.
+- `options(styler.save_after_styling = TRUE)`.
 
 ## Notes
 
