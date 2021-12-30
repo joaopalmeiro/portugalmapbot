@@ -29,17 +29,18 @@ img_url <- paste0(
   ",15,0/600x400@2x?access_token=",
   Sys.getenv("MAPBOX_PUBLIC_ACCESS_TOKEN")
 )
-img_url
+# cat(img_url)
 
 temp_file <- tempfile()
 download.file(img_url, temp_file)
 
+sep <- "\n"
 latlon_details <- paste0(
-  "🌐 ", lat, ", ", lon, "\n",
-  "🗺️ ", "https://www.openstreetmap.org/#map=17/", lat, "/", lon, "/", "\n",
-  "🗺️ ", "https://www.google.com/maps/@", lat, ",", lon, ",17z"
+  "📍 ", lat, ", ", lon, sep, sep,
+  "🗺️ ", "https://www.openstreetmap.org/#map=17/", lat, "/", lon, "/", sep,
+  "🗾 ", "https://www.google.com/maps/@", lat, ",", lon, ",17z"
 )
-cat(latlon_details)
+# cat(latlon_details)
 
 rtweet::post_tweet(
   status = latlon_details,
