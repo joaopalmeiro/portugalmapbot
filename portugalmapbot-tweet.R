@@ -1,18 +1,28 @@
-# Create Twitter token
+library(groundhog)
+pkgs <- c("rtweet", "sf", "styler")
+groundhog.library(pkgs, "2021-12-28", tolerate.R.version = "3.6.3")
+
+# More info: https://docs.ropensci.org/rtweet/reference/create_token.html
 portugalmapbot_token <- rtweet::create_token(
   app = "portugalmapbot",
-  consumer_key =    Sys.getenv("TWITTER_CONSUMER_API_KEY"),
+  consumer_key = Sys.getenv("TWITTER_CONSUMER_API_KEY"),
   consumer_secret = Sys.getenv("TWITTER_CONSUMER_API_SECRET"),
-  access_token =    Sys.getenv("TWITTER_ACCESS_TOKEN"),
-  access_secret =   Sys.getenv("TWITTER_ACCESS_TOKEN_SECRET")
+  access_token = Sys.getenv("TWITTER_ACCESS_TOKEN"),
+  access_secret = Sys.getenv("TWITTER_ACCESS_TOKEN_SECRET"),
+  set_renv = FALSE
 )
 
-# Generate random coordinates within specific limits
-lon <- round(runif(1, -0.489, 0.236), 4)
-lon <- format(lon, scientific = FALSE)
-lat <- round(runif(1, 51.28, 51.686), 4)
+# Load boundaries
+portugal <- sf::st_read("portugal/gadm36_PRT_0.shp")
 
-# Build URL and fetch image from Mapbox API
+# Generate random coordinates
+point <- sf::st_sample(portugal, 1)
+coord <- sf::st_coordinates(point)
+
+lon <- round(coord[1], 4)
+lat <- round(coord[2], 4)
+
+# More info: https://docs.mapbox.com/api/maps/static-images/#retrieve-a-static-map-from-a-style
 img_url <- paste0(
   "https://api.mapbox.com/styles/v1/mapbox/satellite-v9/static/",
   paste0(lon, ",", lat),
@@ -20,17 +30,14 @@ img_url <- paste0(
   Sys.getenv("MAPBOX_PUBLIC_ACCESS_TOKEN")
 )
 
-# Download the image to a temporary location
 temp_file <- tempfile()
 download.file(img_url, temp_file)
 
-# Build the status message (text and URL)
 latlon_details <- paste0(
   lat, ", ", lon, "\n",
   "https://www.openstreetmap.org/#map=17/", lat, "/", lon, "/"
 )
 
-# Post the image to Twitter
 rtweet::post_tweet(
   status = latlon_details,
   media = temp_file,
