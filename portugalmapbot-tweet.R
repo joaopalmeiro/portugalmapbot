@@ -1,6 +1,6 @@
-library(groundhog)
+# More info: https://groundhogr.com/
 pkgs <- c("rtweet", "sf", "styler")
-groundhog.library(pkgs, "2021-12-28", tolerate.R.version = "3.6.3")
+groundhog::groundhog.library(pkgs, "2021-12-28", tolerate.R.version = "3.6.3")
 
 # More info: https://docs.ropensci.org/rtweet/reference/create_token.html
 portugalmapbot_token <- rtweet::create_token(
@@ -29,14 +29,17 @@ img_url <- paste0(
   ",15,0/600x400@2x?access_token=",
   Sys.getenv("MAPBOX_PUBLIC_ACCESS_TOKEN")
 )
+img_url
 
 temp_file <- tempfile()
 download.file(img_url, temp_file)
 
 latlon_details <- paste0(
-  lat, ", ", lon, "\n",
-  "https://www.openstreetmap.org/#map=17/", lat, "/", lon, "/"
+  "🌐 ", lat, ", ", lon, "\n",
+  "🗺️ ", "https://www.openstreetmap.org/#map=17/", lat, "/", lon, "/", "\n",
+  "🗺️ ", "https://www.google.com/maps/@", lat, ",", lon, ",17z"
 )
+cat(latlon_details)
 
 rtweet::post_tweet(
   status = latlon_details,

@@ -9,6 +9,8 @@
 
 ## Development
 
+> R version 3.6.3
+
 - `options(styler.save_after_styling = TRUE)`.
 
 ## Notes
@@ -19,3 +21,6 @@
   - Alternative to {[renv](https://rstudio.github.io/renv/articles/renv.html)}.
   - `install.packages("groundhog")`.
   - [`groundhog.library`](https://www.rdocumentation.org/packages/groundhog/versions/1.5.0/topics/groundhog.library) documentation.
+  - [Repo](https://github.com/CredibilityLab/groundhog).
+- [setup-r](https://github.com/r-lib/actions/tree/v2-branch/setup-r) repo.
+- `rstudioapi::versionInfo()`.
