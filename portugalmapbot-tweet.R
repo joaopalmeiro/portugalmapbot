@@ -1,6 +1,6 @@
 # Create Twitter token
-londonmapbot_token <- rtweet::create_token(
-  app = "londonmapbot",
+portugalmapbot_token <- rtweet::create_token(
+  app = "portugalmapbot",
   consumer_key =    Sys.getenv("TWITTER_CONSUMER_API_KEY"),
   consumer_secret = Sys.getenv("TWITTER_CONSUMER_API_SECRET"),
   access_token =    Sys.getenv("TWITTER_ACCESS_TOKEN"),
@@ -34,5 +34,5 @@ latlon_details <- paste0(
 rtweet::post_tweet(
   status = latlon_details,
   media = temp_file,
-  token = londonmapbot_token
+  token = portugalmapbot_token
 )
