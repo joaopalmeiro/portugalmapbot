@@ -1,11 +1,15 @@
 # portugalmapbot
 
+> [Twitter](https://twitter.com/portugalmapbot)
+
+A Twitter bot 🤖🐦 that shares random satellite images from Portugal 🛰️🇵🇹. Adapted from the [londonmapbot](https://github.com/matt-dray/londonmapbot) Twitter bot created by [Matt Dray](https://www.matt-dray.com/). Spatial data obtained via [GADM](https://gadm.org/).
+
 ## References
 
 - [londonmapbot](https://github.com/matt-dray/londonmapbot) by [Matt Dray](https://twitter.com/mattdray).
 - [chicagomapbot](https://github.com/leotorres114/chicagomapbot) by [Leo Torres](https://github.com/leotorres114).
 - [esmapbot](https://github.com/roberer/esmapbot) by [Rober J](https://twitter.com/roberer_).
-- Spatial data from Portugal by [GADM](https://gadm.org/index.html).
+- Spatial data from Portugal by [GADM](https://gadm.org/) ([Wikipedia page](https://en.wikipedia.org/wiki/GADM)).
 
 ## Development
 

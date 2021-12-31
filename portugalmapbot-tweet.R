@@ -13,6 +13,7 @@ portugalmapbot_token <- rtweet::create_token(
 )
 
 # Load boundaries
+# More info: https://epsg.io/4326
 portugal <- sf::st_read("portugal/gadm36_PRT_0.shp")
 
 # Generate random coordinates
