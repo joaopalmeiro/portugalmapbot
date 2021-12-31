@@ -11,6 +11,10 @@ A Twitter bot 🤖🐦 that shares random satellite images from Portugal 🛰️
 - [esmapbot](https://github.com/roberer/esmapbot) by [Rober J](https://twitter.com/roberer_).
 - Spatial data from Portugal by [GADM](https://gadm.org/) ([Wikipedia page](https://en.wikipedia.org/wiki/GADM)).
 
+## Image credits
+
+Posted images are copyright of Mapbox/OpenStreetMap/Maxar. This information is embedded in every image.
+
 ## Development
 
 > R version 3.6.3
