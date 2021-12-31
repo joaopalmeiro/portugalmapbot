@@ -24,7 +24,7 @@ portugal <- sf::st_read("portugal/gadm36_PRT_0.shp")
 # Generate random coordinates
 point <- sf::st_sample(portugal, 1)
 coord <- sf::st_coordinates(point)
-cat(coord)
+# cat(coord)
 
 lon <- round(coord[1], 4)
 lat <- round(coord[2], 4)
@@ -50,6 +50,7 @@ latlon_details <- paste0(
   "🗾 ", "https://www.google.com/maps/@", lat, ",", lon, ",17z"
 )
 # cat(latlon_details)
+# nchar(latlon_details)
 
 rtweet::post_tweet(
   status = latlon_details,
