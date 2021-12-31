@@ -46,3 +46,4 @@ Posted images are copyright of Mapbox/OpenStreetMap/Maxar. This information is e
   - `brew install act`.
   - It does not support macOS [runners](https://github.com/nektos/act#runners).
 - `brew info gdal` and `gdalinfo --version`.
+- [post_tweet() hangs when including media](https://github.com/ropensci/rtweet/issues/486) issue.
