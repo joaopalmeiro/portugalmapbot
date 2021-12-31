@@ -1,6 +1,11 @@
 # More info: https://groundhogr.com/
 pkgs <- c("rtweet", "sf", "styler")
-groundhog::groundhog.library(pkgs, "2021-12-28", tolerate.R.version = "3.6.3")
+groundhog::groundhog.library(
+  pkgs, "2021-12-28",
+  tolerate.R.version = "3.6.3",
+  # force.install = TRUE
+  force.install = FALSE
+)
 
 # More info: https://docs.ropensci.org/rtweet/reference/create_token.html
 portugalmapbot_token <- rtweet::create_token(

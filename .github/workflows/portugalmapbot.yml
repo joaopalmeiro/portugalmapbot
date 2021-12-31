@@ -4,6 +4,7 @@
 # - https://github.com/roberer/esmapbot/blob/master/.github/workflows/esmapbot.yml
 # - https://github.com/r-lib/actions/tree/v2-branch/setup-r
 # - https://crontab.guru/
+# - https://github.com/CredibilityLab/groundhog/blob/v1.5.0/R/get.groundhog.folder.R#L23
 name: portugalmapbot
 
 on:
@@ -27,5 +28,7 @@ jobs:
           r-version: '3.6.3'
       - name: Install groundhog package
         run: Rscript -e 'install.packages("groundhog", dependencies = TRUE)'
+      - name: Create the main groundhog folder early to avoid manual confirmation later
+        run: mkdir ~/R_groundhog
       - name: Create and post tweet
         run: Rscript portugalmapbot-tweet.R

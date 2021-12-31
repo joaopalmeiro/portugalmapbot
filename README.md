@@ -31,6 +31,7 @@ Posted images are copyright of Mapbox/OpenStreetMap/Maxar. This information is e
   - [`groundhog.library`](https://www.rdocumentation.org/packages/groundhog/versions/1.5.0/topics/groundhog.library) documentation.
   - [Repo](https://github.com/CredibilityLab/groundhog).
   - `groundhog::get.groundhog.folder()`.
+  - [Main folder](https://github.com/CredibilityLab/groundhog/blob/v1.5.0/R/get.groundhog.folder.R#L23).
 - [setup-r](https://github.com/r-lib/actions/tree/v2-branch/setup-r) repo.
 - `rstudioapi::versionInfo()`.
 - Header: `https://api.mapbox.com/styles/v1/mapbox/satellite-v9/static/-6.7212,41.62,4,0/1280x500@2x?access_token=`.
