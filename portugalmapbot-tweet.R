@@ -23,7 +23,9 @@ coord <- sf::st_coordinates(point)
 lon <- round(coord[1], 4)
 lat <- round(coord[2], 4)
 
-# More info: https://docs.mapbox.com/api/maps/static-images/#retrieve-a-static-map-from-a-style
+# More info:
+# - https://docs.mapbox.com/api/maps/static-images/#retrieve-a-static-map-from-a-style
+# - https://docs.mapbox.com/help/glossary/zoom-level/
 img_url <- paste0(
   "https://api.mapbox.com/styles/v1/mapbox/satellite-v9/static/",
   paste0(lon, ",", lat),

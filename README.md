@@ -28,3 +28,5 @@ A Twitter bot 🤖🐦 that shares random satellite images from Portugal 🛰️
   - [Repo](https://github.com/CredibilityLab/groundhog).
 - [setup-r](https://github.com/r-lib/actions/tree/v2-branch/setup-r) repo.
 - `rstudioapi::versionInfo()`.
+- Header: `https://api.mapbox.com/styles/v1/mapbox/satellite-v9/static/-6.7212,41.62,4,0/1280x500@2x?access_token=`.
+- [Twitter sizes](https://www.canva.com/sizes/twitter/).
