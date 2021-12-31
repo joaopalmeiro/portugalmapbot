@@ -19,34 +19,35 @@ portugal <- sf::st_read("portugal/gadm36_PRT_0.shp")
 # Generate random coordinates
 point <- sf::st_sample(portugal, 1)
 coord <- sf::st_coordinates(point)
+cat(coord)
 
-lon <- round(coord[1], 4)
-lat <- round(coord[2], 4)
-
-# More info:
-# - https://docs.mapbox.com/api/maps/static-images/#retrieve-a-static-map-from-a-style
-# - https://docs.mapbox.com/help/glossary/zoom-level/
-img_url <- paste0(
-  "https://api.mapbox.com/styles/v1/mapbox/satellite-v9/static/",
-  paste0(lon, ",", lat),
-  ",15,0/600x400@2x?access_token=",
-  Sys.getenv("MAPBOX_PUBLIC_ACCESS_TOKEN")
-)
-# cat(img_url)
-
-temp_file <- tempfile()
-download.file(img_url, temp_file)
-
-sep <- "\n"
-latlon_details <- paste0(
-  "📍 ", lat, ", ", lon, sep, sep,
-  "🗺️ ", "https://www.openstreetmap.org/#map=17/", lat, "/", lon, "/", sep,
-  "🗾 ", "https://www.google.com/maps/@", lat, ",", lon, ",17z"
-)
-# cat(latlon_details)
-
-rtweet::post_tweet(
-  status = latlon_details,
-  media = temp_file,
-  token = portugalmapbot_token
-)
+# lon <- round(coord[1], 4)
+# lat <- round(coord[2], 4)
+#
+# # More info:
+# # - https://docs.mapbox.com/api/maps/static-images/#retrieve-a-static-map-from-a-style
+# # - https://docs.mapbox.com/help/glossary/zoom-level/
+# img_url <- paste0(
+#   "https://api.mapbox.com/styles/v1/mapbox/satellite-v9/static/",
+#   paste0(lon, ",", lat),
+#   ",15,0/600x400@2x?access_token=",
+#   Sys.getenv("MAPBOX_PUBLIC_ACCESS_TOKEN")
+# )
+# # cat(img_url)
+#
+# temp_file <- tempfile()
+# download.file(img_url, temp_file)
+#
+# sep <- "\n"
+# latlon_details <- paste0(
+#   "📍 ", lat, ", ", lon, sep, sep,
+#   "🗺️ ", "https://www.openstreetmap.org/#map=17/", lat, "/", lon, "/", sep,
+#   "🗾 ", "https://www.google.com/maps/@", lat, ",", lon, ",17z"
+# )
+# # cat(latlon_details)
+#
+# rtweet::post_tweet(
+#   status = latlon_details,
+#   media = temp_file,
+#   token = portugalmapbot_token
+# )
